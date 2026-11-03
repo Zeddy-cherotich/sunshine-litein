@@ -1,10 +1,5 @@
 import React, { useState } from 'react';
 
-// ==========================================
-// 1. REUSABLE COMPONENTS
-// ==========================================
-
-// Button Component
 const Button = ({ children, onClick, variant = 'primary', type = 'button', className = '' }) => {
   const baseStyles = "px-6 py-2.5 rounded-lg font-medium transition-all duration-300 shadow-sm cursor-pointer";
   const variants = {
@@ -20,7 +15,6 @@ const Button = ({ children, onClick, variant = 'primary', type = 'button', class
   );
 };
 
-// Navigation Link Component (Props-based)
 const NavItem = ({ label, activePage, setPage, mobile = false, closeMenu }) => {
   const isActive = activePage === label;
   const handleClick = () => {
@@ -41,8 +35,6 @@ const NavItem = ({ label, activePage, setPage, mobile = false, closeMenu }) => {
     </button>
   );
 };
-
-// Header Component
 const Header = ({ activePage, setPage }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navLinks = ['Home', 'About Us', 'Services', 'Registration', 'Gallery', 'Contact Us'];
@@ -52,7 +44,7 @@ const Header = ({ activePage, setPage }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           
-          {/* Organization Brand */}
+          {}
           <div className="flex items-center space-x-3 cursor-pointer" onClick={() => setPage('Home')}>
             <div className="w-12 h-12 bg-emerald-800 text-white rounded-xl flex items-center justify-center font-bold text-xl shadow-md">
               LS
@@ -63,7 +55,7 @@ const Header = ({ activePage, setPage }) => {
             </div>
           </div>
 
-          {/* Desktop Navigation */}
+          {}
           <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {navLinks.map((link) => (
               <NavItem key={link} label={link} activePage={activePage} setPage={setPage} />
@@ -119,8 +111,6 @@ const Header = ({ activePage, setPage }) => {
     </header>
   );
 };
-
-// Footer Component
 const Footer = ({ setPage }) => {
   return (
     <footer className="bg-slate-900 text-slate-300 pt-16 pb-12 border-t border-slate-800">
@@ -179,13 +169,6 @@ const Footer = ({ setPage }) => {
     </footer>
   );
 };
-
-
-// ==========================================
-// 2. PAGE VIEWS
-// ==========================================
-
-// Home Page
 const HomePage = ({ setPage }) => {
   return (
     <div className="space-y-16 pb-16">
@@ -264,8 +247,6 @@ const HomePage = ({ setPage }) => {
     </div>
   );
 };
-
-// About Us Page
 const AboutUsPage = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
@@ -312,8 +293,6 @@ const AboutUsPage = () => {
     </div>
   );
 };
-
-// Services Page (At least 5 services offered)
 const ServicesPage = () => {
   const services = [
     {
@@ -362,8 +341,6 @@ const ServicesPage = () => {
     </div>
   );
 };
-
-// Registration Page (Interactive form with state & confirmation message)
 const RegistrationPage = () => {
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -488,8 +465,6 @@ const RegistrationPage = () => {
     </div>
   );
 };
-
-// Gallery Page (Displaying at least 6 relevant images)
 const GalleryPage = () => {
   const images = [
     { url: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=800", title: "Main Administration Block" },
@@ -528,8 +503,6 @@ const GalleryPage = () => {
     </div>
   );
 };
-
-// Contact Us Page (Contact info + form with confirmation)
 const ContactUsPage = () => {
   const [sent, setSent] = useState(false);
   const [contactForm, setContactForm] = useState({ name: '', email: '', message: '' });
@@ -642,15 +615,8 @@ const ContactUsPage = () => {
     </div>
   );
 };
-
-
-// ==========================================
-// 3. MAIN APP ROUTER COMPONENT
-// ==========================================
 export default function App() {
   const [activePage, setActivePage] = useState('Home');
-
-  // Page Routing Switcher
   const renderPage = () => {
     switch (activePage) {
       case 'Home':
