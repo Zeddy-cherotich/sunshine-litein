@@ -1,0 +1,49 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #27382f;
+  background: #f7f6f1;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  font-weight: 400;
+
+  --forest: #293b31;
+  --orange: #e99155;
+  --orange-light: #efb486;
+  --serif: Georgia, 'Times New Roman', serif;
+
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #e99155;
+  outline-offset: 4px;
+}
+
+::selection {
+  background: #e99155;
+  color: #1d2922;
+}
